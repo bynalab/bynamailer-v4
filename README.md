@@ -4,18 +4,22 @@ BynaSender allows you to send bulk or single emails with or without using smtp s
 
 **KEYWORDS**
 
-Reciever Email: b-email
+Reciever Email: {email}
 
-Receiver Email (Base64): b-b64email
+Receiver Email (Base64): {base64email}
 
-Receiver Username: b-user
+Receiver Username: {mename}
 
-Email Domain: b-domain
+Email Domain: {domain}
 
-Current Time: b-time
+Host: {frmsite}
 
-Today's Date: b-date
+Link: {link}
 
-Random: b-rand
+Current Time: {time}
 
-Md5: b-md5
+Today's Date: {date}
+
+Random: {random}
+
+Md5: {md5}
