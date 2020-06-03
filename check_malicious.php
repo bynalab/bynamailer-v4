@@ -1,10 +1,10 @@
 <?php
 
-$url = "https://madoublec.com/";
+$url = "";
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
-  CURLOPT_URL => "https://safebrowsing.googleapis.com/v4/threatMatches:find?key=AIzaSyBVDjLa1fez7mD8PNk679a41xBSwB8z2tU",
+  CURLOPT_URL => "https://safebrowsing.googleapis.com/v4/threatMatches:find?key=API_KEY",
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_ENCODING => "",
   CURLOPT_MAXREDIRS => 10,
