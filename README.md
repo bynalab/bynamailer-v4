@@ -2,7 +2,7 @@
 
 BynaSender allows you to send bulk or single emails with or without using smtp server on your localhost or webhost
 
-KEYWORDS
+**KEYWORDS**
 
 Reciever Email: b-email
 
