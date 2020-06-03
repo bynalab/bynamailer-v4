@@ -18,6 +18,8 @@ use PHPMailer\PHPMailer\Exception;
 
 // Load Composer's autoloader
 require 'vendor/autoload.php';
+
+//Checks for malicious url
 require 'check_malicious.php';
 
 $bynamailer = new PHPMailer(true);
@@ -124,10 +126,12 @@ while($to[$countArray])
     if($bynaAttach['tmp_name'] != ""){
         $bynamailer->AddAttachment($bynaAttach['tmp_name'],$bynaAttach['name']);
     }
+
     if($resp != 1){
         $bynamailer->send();
     } else {
-        echo "Link is not good.";
+        //Prevent malicious url from sending.
+        echo "Link is Malicious.";
         break;
     }
 $countArray++;
