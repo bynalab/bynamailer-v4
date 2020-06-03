@@ -1,3 +1,32 @@
+
+<?php
+    session_start();
+
+    if(!isset($_SESSION['login'])) {
+
+        echo "<center>Password </br> <form action='' method='post'> <input type='password' name='bpassword' required/> <button type='submit' name='submit'>Submit</button> </form></center>";
+
+    if(isset($_POST['bpassword'])) {
+        if($_POST['bpassword'] == date("mdY")){
+            $_SESSION['login'] = true;
+            header("Location: index.php");
+        } else {
+            echo "<center style='color:red'>Incorrect Password</center>";
+        }
+    }
+
+    }
+
+    if(isset($_GET['a']) and $_GET['a'] == 'logout'){
+        session_destroy();
+        header("Location: index.php");
+    }
+
+    if(isset($_SESSION['login'])) {
+       
+            
+?>
+
 <!doctype html>
 <html>
 <head>
@@ -15,10 +44,11 @@
     <canvas id="canvas" style="position:fixed; top:0;left:0; z-index:-1;"></canvas>
 
   <!--  <img id="logo" src="img/byna lab.png" alt="BynaLogo"> -->
-    
+  <center style="font-size:20px"> <a href="?a=logout">Logout</a> </center>  
+
   <div id="header"><h1 id="inv">BYNA SENDER <a href="https://icq.im/bynalab" target="_blank">(ICQ)</a></h1></div>
    
-  <center>
+<center>
     <div id="accordion">
         <div class="card">
         <div class="card-header" id="headingTwo">
@@ -30,14 +60,16 @@
         </div>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
             <div class="card-body">
-                Reciever Email: b-email <br/>
-                Receiver Email (Base64): b-b64email <br/>
-                Receiver Username: b-user <br/>
-                Email Domain: b-domain <br/>
-                Current Time: b-time <br/>
-                Today's Date: b-date <br/>
-                Random: b-rand <br/>
-                Md5: b-md5 <br/>
+                Reciever Email: {email} <br/>
+                Receiver Email (Base64): {base64email} <br/>
+                Receiver Username: {mename} <br/>
+                Email Domain: {domain} <br/>
+                Host: {frmsite} <br/>
+                Link: {link} <br/>
+                Current Time: {time} <br/>
+                Today's Date: {date} <br/>
+                Random: {random} <br/>
+                Md5: {md5} <br/>
             </div>
         </div>
         </div>
@@ -54,7 +86,7 @@
         <div class="col-lg-4 text-center">
             <div class="form-group">
                 <label>Subject</label>
-                <input class="form-control" value="Hello b-user" required="" name="subject" placeholder="Hello b-user">
+                <input class="form-control" value="Hello {mename}" required="" name="subject" placeholder="Hello {mename}">
             </div>
         </div>
         <div class="col-lg-4 text-center">
@@ -86,27 +118,39 @@
             </div>
         </div>
     </div>
-    <br/>
+
+    <div class="row">
+    <div class="col-lg-6 text-center">
+        <div class="form-group">
+            <label for="message">Links:</label>
+            <textarea style="font-family: Arial, Helvetica, sans-serif;" class="form-control" rows="15" name="link" id="link">Paste your links here. New Line</textarea>
+        </div>
+    </div>
+
+    <br/><br/>
+        <div class="col-lg-6 text-center">
             <input type="file" name="bynaAttach"/><br/>
+        </div>
+    </div>
 
     <span id="smtp-warning" style="margin-left: 40%;">Leave blank if you don't have smtp</span>
 <br/><br/>
     <div id="smtp">
-                    <div class="col-lg-3 text-center">
+        <div class="col-lg-3 text-center">
             <div class="form-group">
                 <label>SMTP Server</label>
                 <input class="form-control" value="" placeholder="mail.bynaserver.com" name="smtpserver">
             </div>
         </div>
             
-            <div class="col-lg-3 text-center">
+        <div class="col-lg-3 text-center">
             <div class="form-group">
                 <label>SMTP User</label>
                 <input class="form-control" value="" name="smtpuser" placeholder="byna@bynalab.com">
             </div>
         </div>
             
-            <div class="col-lg-3 text-center">
+        <div class="col-lg-3 text-center">
             <div class="form-group">
                 <label>SMTP Password</label>
                 <input class="form-control" value="" name="smtppass" type="password" placeholder="password">
@@ -155,3 +199,4 @@
 </body>
 </html>
 
+<?php } ?>
