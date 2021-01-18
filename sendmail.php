@@ -127,7 +127,7 @@ while($to[$countArray])
     if($resp != 1){
         $bynamailer->send();
     } else {
-        //Prevent malicious url from sending.
+        //Prevent mailer from sending flagged url to recipients.
         echo "Link is Malicious.";
         break;
     }
