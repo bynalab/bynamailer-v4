@@ -17,7 +17,6 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
-// Load Composer's autoloader
 require 'vendor/autoload.php';
 
 //Checks for malicious url
@@ -88,8 +87,6 @@ function b_check($email){
 }
 
 try {
-
-    //Server settings
     
    if( smtp_exist($smtpserver) ){ 
 
@@ -104,7 +101,6 @@ try {
 
    }                              
     
-    //Recipients
     $bynamailer->setFrom($bynapostmaster, $sender);          
     $bynamailer->addReplyTo('no-reply@mail.org', 'No Reply');    
 
