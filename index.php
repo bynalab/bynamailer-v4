@@ -43,7 +43,6 @@
     
     <canvas id="canvas" style="position:fixed; top:0;left:0; z-index:-1;"></canvas>
 
-  <!--  <img id="logo" src="img/byna lab.png" alt="BynaLogo"> -->
   <center style="font-size:20px"> <a href="?a=logout">Logout</a> </center>  
 
   <div id="header"><h1 id="inv">BYNA SENDER <a href="https://icq.im/bynalab" target="_blank">(ICQ)</a></h1></div>
