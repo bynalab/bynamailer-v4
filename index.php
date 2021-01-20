@@ -107,7 +107,7 @@
         <div class="col-lg-6 text-center">
             <div class="form-group">
                 <label for="recipient">Recipients:</label>
-                <textarea class="form-control" name="recipient" rows="15" id="recipient" placeholder="Insert Recipients. Example: bynalab@live.com, emails are in 'New line' format" required>postmaster@gmail.com</textarea>
+                <textarea class="form-control" name="recipient" rows="15" id="recipient" placeholder="Insert Recipients. Example: postmaster@gmail.com, emails are in 'New line' format" required>postmaster@gmail.com</textarea>
             </div>
         </div>
         <div class="col-lg-6 text-center">
